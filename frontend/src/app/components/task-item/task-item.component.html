@@ -1,0 +1,17 @@
+<div [ngClass]="{ reminder: task.reminder }" class="task">
+  <h3>
+    {{ task.title }}
+    <h3 *ngIf="task.completed != 0">[COMPLETED]</h3>
+  </h3>
+  <form class="add-form" *ngIf="toggle">
+    <div class="form-control">
+      <input type="text" name="text" id="text" placeholder=" Task update" [(ngModel)]="text"/>
+      <app-button color="" text="SAVE" (click)="onUpdate(task.id)"></app-button>
+    </div>
+  </form>
+
+  <p>{{ task.created_at | date:'medium' }}</p>
+  <app-button color="" text="Complete" *ngIf="task.completed === 0" (click)="onComplete(task.id)"></app-button>
+  <app-button color="" text="Update" (click)="handleToggle()"></app-button>
+  <app-button color="" text="Delete" (click)="onDelete(task.id)"></app-button>
+</div>

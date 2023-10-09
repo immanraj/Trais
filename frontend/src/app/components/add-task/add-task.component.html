@@ -1,0 +1,15 @@
+<form  class="add-form">
+    <div class="form-control">
+    <input
+    class="text"
+        type="text"
+        name="text"
+        id="text"
+        [(ngModel)]="text"
+        placeholder="enter task.."
+      /><br><br>
+      <app-button style="text-align: right;" text="ADD TASK" (click)="onAdd()"></app-button>
+    </div>
+    <br>
+    <hr>
+</form>
